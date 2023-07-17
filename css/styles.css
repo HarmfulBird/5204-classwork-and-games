@@ -1,0 +1,80 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0%;
+    padding-left: 25px;
+    background-color: lightpink;
+}
+
+header {
+    margin: auto;
+    width: 75%;
+    background-color: lightblue;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+h1 {
+    font-size: 70px;
+    text-align: center;
+}
+
+.content {
+    width: 90%;
+    margin: auto;
+}
+
+.infoblock {
+    width: 70%;
+    margin: auto;
+    padding: 10px 30px 40px 30px;
+    margin-top: 40px;
+    background-color: lightskyblue;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+a.button {
+    display: flex;
+    width: 11%;
+    margin: auto;
+    text-align: center;
+    padding: 15px 30px 15px 30px;
+    margin-top: 25px;
+    font-size: 35px;
+    border-radius: 12px;
+    background-color: #EB83AFBB;
+    background: linear-gradient(to bottom right, #EB83AF, #ff5280);
+    color: white;
+}
+
+
+a.button:hover {
+    background: linear-gradient(to bottom right, #ff5280AA, #EB83AFAA);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 10%; /* Place the button at the bottom of the page */
+    right: 10px; /* Place the button 10px from the right side of page */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Make sure there are no borders */
+    outline: none; /* Make sure there is no outline */
+    background-color: #343434; /* Set the background color */
+    color: white; /* Set the text color */
+    cursor: pointer; /* Add a "hand" pointer on hover */
+    padding: 15px; /* Add padding */
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px; /* Round the corners */
+    font-size: 18px; /* Set font size */
+}
+
+#myBtn:hover {
+    background-color: #343434; /* Add a dark pink background on hover */
+}

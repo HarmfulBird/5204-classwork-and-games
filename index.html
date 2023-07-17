@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapi.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://font.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+</head>
+<body>
+    <!-- alt z for word wrap =) -->
+    <Header>
+        <h1>COMP. 5204 Enterprise </h1> 
+    </Header>
+
+    <div class="content">
+
+        <a class="button" target="_blank" href="page2.html">Taichi Page</a>
+
+        <div class="infoblock">
+            <h2>Week 1</h2>
+            
+            <h3>Learning Objectives</h3>
+
+            <li>Meet the tutor and some classmates.</li>
+            <li>Complete your online intro in Teams - read others</li>
+            <li>Find and read the course outline and assesment docs.</li>
+            <li>Understand that all the resources are on Teams - no Moodle course. </li>
+            <li>Understand that we will learn by making webpages, apps and databases! Watching helps but doing is all.</li>.
+
+            <li>Understand I can practice HTML/web development in the browser with a site like JS Fiddle.</li>
+            <li>Understand what an IDE Integrated Development Environment is and why we use one (Compare Notepad vs VS Code) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Remember to open the folder in VS Code not the file).</li>
+            <li>Learn about HTML by editing someone else's code. </li>
+            <li>Know where to find info about more HTML tags.</li>
+            <li>Make a simple page from a design sketch.</li>
+            
+            <br>
+
+            <p>
+                This semester we will follow  <a href="https://developer.mozilla.org/en-US/docs/Learn">MDN Learn Web Development</a>. <br>
+                It starts with an introduction to each of the three key web technologies, HTML, CSS and Javascript. It then proceeds with a deeper dive into each of these. <br>
+                If you haven't done any programming or development before you are going to meet 3 languages in 2 weeks! Don't panic there will be a deep dive into each later. <br>
+                Just try to get a feel for the overview. HTML for content, CSS for style and JS to do stuff.
+                <br>
+            </p>
+        </div>
+
+        <div class="infoblock">
+            <h2>The Course Outline.</h2> 
+
+            <p>Welcome to COMP.5204 Enterprise. Today we will cover a few essentials about the course.You absolutely must know where to find the course outline and the assessment docs in the MS Teams/Files/Class Materials folder. Create a link to it, don't copy it and miss out on updates. There is no Moodle page for this course.</p>
+
+            <p>How many weeks are in the course? This semester what is the course structured on? How many weeks do we have for the Getting Started With the Web section? How long do we have for our HTML intro? How many weeks for CSS? How many weeks for Databases with Access? How about the intro to Java Script? </p>
+            
+
+            <P>The Assessments- How many are there? How much are they worth? Where is the info about them? (Challenge: recreate the assessments table here using HTML. We will come back to this.)</P>
+
+            <h2>Important Resources</h2>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn"> MDN Web Docs - This semester our course follows this</a>
+
+            <a href="jsfiddle.net">JS Fiddle - an online Editor</a>
+            <a href=" https://code.visualstudio.com/download"> VS Code - a free IDE</a>
+            <p>Can you find the Live Server Extension in VS Code?</p>
+
+            <p>We do not have time to cover every tag, or CSS structure in class, you are scheduled for 5 hours of student directed time per week. You need to use this to get the most from the course. Here is a list of essential resources</p>
+            
+            <a href="https://www.linkedin.com/learning/html-essential-training-4/what-is-html?autoplay=true&contextUrn=urn%3Ali%3AlyndaLearningPath%3A59370541498ec352a683231c&resume=false&u=56197641">
+            <p>Jen Simmons LinkedIn Learning</a> 
+            <br>You can also access via Moodle or the hub.</p>
+            <p>            
+                |&nbsp;
+                <a href="w3.org"> W3.org</a> &nbsp;|&nbsp;
+                <a href=""> W3 Schools</a> &nbsp;|&nbsp; 
+                <a href=""> Free Code Camp</a> &nbsp;|&nbsp;
+                <a href=""> Kevin Powell - My Youtube current favourite Web Dev  educator</a> &nbsp;|
+            </p>
+    
+            <img src="assets/MDNOverview.png" height width alt >
+
+            <li>5 Hours Student Directed</li>  
+            <li>Find Jen Simmons course on Linked in learning</li>  
+            <li>Complete chapters 1-4</li>  
+            <li>Practice the examples on JS Fiddle or another web-based site</li>  
+            <li>Finish marking up this page using an IDE ( I recommend VS Code)</li>  
+            <li>Be able to test your page on a server ( I recommend the Live Server extension in VS Code)</li>  
+
+
+            <li>Have an IDE installed and tested for local dev in the lab and at home.</li>  
+            <li>Use the Tai Chi Page as a model to create a page for a small business or organisation</li>  
+            <li>Continue Jen Simmons to Chpt 4 by end of week</li>  
+            <li>Practice any examples from MDN docs that you need to go over.</li>  
+        </div>
+    </div>
+    <!-- Script to make the "scroll to top" button work -->
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+            
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                    document.getElementById("myBtn").style.display = "none";
+            }
+        }
+            
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+    </script>
+</body>
+</html>
