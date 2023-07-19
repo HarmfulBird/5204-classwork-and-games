@@ -1,23 +1,44 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     line-height: 1.5;
     margin: 0%;
     padding-left: 25px;
-    background-color: whitesmoke;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/assets/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header {
     margin: auto;
+    margin-top: 30px;
+    align-items: center;
     width: 75%;
-    background-color: lightblue;
+    background-color: rgb(243, 167, 211);
     border-radius: 15px;
     box-shadow: 5px 5px 5px gray;
+}
+
+.headermenu {
+    align-self: center; 
+    float: right; 
+    display: inline; 
+    padding-right: 20px;
+    align-items: center;
 }
 
 h1 {
     font-size: 70px;
     text-align: center;
+    margin-bottom: 10px;
+    display: inline;
+    padding-left: 30px;
+    color: #fff;
 }
 
 .content {
@@ -30,28 +51,150 @@ h1 {
     margin: auto;
     padding: 10px 30px 40px 30px;
     margin-top: 40px;
+    margin-bottom: 20px;
     background-color: lightskyblue;
     border-radius: 20px;
     box-shadow: 5px 5px 5px gray;
 }
 
-a.button {
-    display: flex;
-    width: 11%;
+.nav {
+    width: 100%;
     margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a.button {
+    width: 10%;
     text-align: center;
     padding: 15px 30px 15px 30px;
     margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
     font-size: 35px;
     border-radius: 12px;
     background-color: #ffcce1bb;
-    background: linear-gradient(to bottom right, #EB83AF, #ff5280);
+    background: linear-gradient(to bottom right, rgb(243, 167, 211), rgb(250, 130, 200));
     color: white;
+
 }
 
 
+
+
+/* ----- Hamburger Menu -------------------------------------------------------- */
+.menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-btn__burger {
+    width: 50px;
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #A0EDFF66;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #A0EDFF66;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-16px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(16px);
+}
+  
+
+/* ----- Menu Animation --------------------------------------------------------*/
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+/* ----- Navigation --------------------------------------------------------*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 18%;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 12px;
+    border-top-right-radius: 0px;
+}
+  
+.sidenav a, .dropdown-btn {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+}
+  
+.sidenav a:hover, .dropdown-btn:hover {
+    color: #818181;
+}
+
+button.dropdown-btn {
+    background-color: #111;
+    border-color: #111;
+    border-style: none;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
 a.button:hover {
-    background: linear-gradient(to bottom right, #ff5280AA, #EB83AFAA);
+    background: linear-gradient(to bottom right, rgb(250, 130, 200), rgb(243, 167, 211));
     background-repeat: no-repeat;
     background-size: cover;
 }
