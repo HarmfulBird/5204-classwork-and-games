@@ -1,0 +1,8 @@
+#canvas-container {
+    width: 960px;
+    height: 400px;
+    left: calc(50% - 480px);
+    top: calc(50% - 200px);
+    position: absolute;
+  }
+  

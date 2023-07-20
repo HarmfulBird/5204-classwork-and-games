@@ -8,6 +8,7 @@ body {
     line-height: 1.5;
     margin: 0%;
     padding-left: 25px;
+    height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/assets/background.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -39,6 +40,28 @@ h1 {
     display: inline;
     padding-left: 30px;
     color: #fff;
+}
+
+@media screen and (max-width: 450px) {
+    h1 {
+        font-size: 30px;
+    }
+    header {
+        width:  90%;
+    }
+    .menu-btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+    }
+    
 }
 
 .content {
