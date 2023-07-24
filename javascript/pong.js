@@ -1,4 +1,4 @@
-let canvas = document.getElementById('myCanvas');
+let canvas = document.getElementById('pong');
 let ctx = canvas.getContext('2d');
 
 let touch_variables = {};
@@ -84,7 +84,8 @@ class Player {
     ctx.strokeStyle = this.outerColor;
 
     if (this.up) {
-      if (this.y > 0) this.y -= this.speed;
+        if (this.y > 0) this.y -= this.speed;
+
     } else if (this.down) {
       if (this.y < canvas.height - 100) this.y += this.speed;
     }
