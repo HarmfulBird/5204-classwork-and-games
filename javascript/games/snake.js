@@ -249,7 +249,7 @@ $("document").ready(function() {
     });
 });
 
-// swipe function --> credit: https://codepen.io/AlexEmashev/pen/BKgQdx?editors=0100
+// swipe function
 (function($) {
   $.fn.swipeDetector = function(options) {
     // States: 0 - no swipe, 1 - swipe started, 2 - swipe released

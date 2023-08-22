@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COMP. 5204 &nbsp; Class Work</title>
+        
+        <style>
+            .app {
+                margin: auto;
+                padding-left: 10px;
+
+                width: 400px;
+                height: 600px;
+
+                border: 3px solid black;
+                border-radius: 20px;
+
+                color: white;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: normal;
+                text-align: center;
+                
+                background-color: #202020;
+            }
+
+            button{
+                width: 80%;
+                height: 60px;
+                margin-top: 15px;
+
+                font-size: 20px;
+                color: white;
+            }
+            button:hover{
+                cursor:pointer;
+            }
+            .red {
+                background-color: red;
+            }
+            .white {
+                background-color: white;
+            }
+
+            #B1 {
+                margin-top: 25%;
+                border: 3px solid white;
+                border-radius: 0px;
+                color: black;
+            }
+            #B2 {
+                border: 3px solid white;
+                background-color: white;
+                border-radius: 50px;
+                color: black;
+            }
+
+            #B3 {
+                border: 3px solid white;
+                background-color: #202020;
+                border-radius: 50px;
+            }
+
+            #B4 {
+                border: 3px solid white;
+                background-color: #202020;
+                border-radius: 12px;
+            }
+
+            #B5 {
+                border: 3px solid white;
+                background-color: #5e5e5e;
+                border-radius: 12px;
+            }
+            
+
+
+
+
+        </style>
+
+    </head>
+
+
+<body>
+    <div class="app" id="app130">
+
+        <button id="B1" class="white">Test</button>
+        <button id="B2">Test</button>
+        <button id="B3">Rounded Clear</button>
+        <button id="B4" onclick="checkColor()">Round Clear Corner</button>
+        <button id="B5" onclick="changeColor()">Round Corner Colored</button>
+
+
+    </div>
+
+    <script>
+        const buttonchanged = document.querySelector("button");
+
+        function checkColor() {
+            buttonchanged.style.backgroundColor = "white";
+            console.log(buttonchanged.style.backgroundColor);
+        }
+
+        function changeColor() {  
+            if(buttonchanged.classList.contains("white")) 
+            {
+                buttonchanged.classList.remove("white");  
+                buttonchanged.classList.add("red");              
+                console.log(buttonchanged.style.backgroundColor);
+                
+            } 
+            else
+            {
+                buttonchanged.classList.add("white");
+                buttonchanged.classList.remove("red");  
+
+                console.log(buttonchanged.style.backgroundColor);
+            }
+        }
+
+    </script>
+</body>
+</html>

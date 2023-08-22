@@ -24,7 +24,7 @@
                 font-style: normal;
                 text-align: center;
                 
-                background-color: #4c57ba7a;
+                background-color: #202020;
             }
 
             h1 {
@@ -35,13 +35,33 @@
             }
 
             .image{
-                margin-top: 30px;
                 padding: none;
             }
             img {
-                border-radius: 20px;
+                width: 100%;
+            }
+            button{
+                width: 80%;
+                height: 60px;
+                margin-top: 10%;
+                border-radius: 25px;
+                font-size: 30px;
+                border: 5px solid white;
+                background-color: #5e5e5e;
+                color: white;
+            }
+            button:hover{
+                cursor:pointer;
+            }
+            .images{
+                border: 3px solid white;
+                width: 80%;
+                height: 400px;
+                margin: auto;
+                margin-top: 10%;
+                border-radius: 25px;
+                padding-top: 5px;
 
-                border: 4px solid black;
             }
 
         </style>
@@ -50,11 +70,13 @@
 
 
 <body>
-    <div class="app" id="app120" onClick="next()">
+    <div class="app" id="app130">
+        <div id="images130"></div>
 
+        <button>Next</button>
 
     </div>
 
-    <script src="/javascript/exercises/exercise2.js"></script>
+    <script src="/javascript/exercises/exercise3.js"></script>
 </body>
 </html>
