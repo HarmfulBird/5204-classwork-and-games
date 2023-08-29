@@ -133,7 +133,7 @@ function hitFood() {
     snake.position.unshift(tail);
     randomFood();
     snake.food++;
-    snake.score += snake.food;
+    snake.score++;
     scoreElt.innerHTML = snake.score + " pts";
     // increase speed
     clearInterval(setInt);
