@@ -32,7 +32,13 @@
         <div id="mySidenav" class="sidenav">
             <a href="/index.html">Overview</a>
             <a href="/pages/work.html">Class Work</a>
-            <a href="/pages/game.html">Games</a>
+            <button class="dropdown-btn"> Games <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-container">
+                <a href="#Topofpage">Top of Page</a>
+                <a href="#Snake">Snake</a>
+                <a href="#Pong">Pong</a>
+                <a href="#InClass">In Class</a>
+            </div>
         </div>
     </Header>
     <script src="/javascript/hamburger.js"></script>
@@ -40,29 +46,27 @@
 
     <div class="content">
 
-        <div class="infoblock" id="ClassWork">
-            <h2>Class Work.</h2> 
+        <div class="infoblock" id="ClassWork" style="text-align: center;">
+            <h1 style="color: black; padding: 0px;">Games.</h1> 
 
-            <p>
-                Welcome to COMP.5204 Enterprise. <br>
-                Today we will cover a few essentials about the course. <br>
-                You absolutely must know where to find the course outline and the assessment docs in the MS Teams/Files/Class Materials folder. <br>
-                Create a link to it, don't copy it and miss out on updates. There is no Moodle page for this course.
-            </p>
+            <h2>
+                Welcome to my Games page. <br>
+                On this page is all of my games, and anything made using "canvas"
+            </h2>
 
         </div>
 
-        <div class="infoblock" id="Game" style="margin-bottom: 100px;">
+        <div class="infoblock" id="Snake" style="margin-bottom: 100px;">
             <h6 style="font-size: 35px; color: black; text-align: center; margin: 0; margin-top: 10px;">Snake (use WSAD)</h6>
             <iframe src="/html/snake.html" title="Snake" width="100%" height="1100px" style="border: 5px solid black; border-radius: 12px; margin-top: 20px;"></iframe>
         </div>
 
-        <div class="infoblock" id="Game" style="margin-bottom: 100px;">
+        <div class="infoblock" id="Pong" style="margin-bottom: 100px;">
             <h6 style="font-size: 35px; color: black; text-align: center; margin: 0; margin-top: 10px;">Pong (use W & S)</h6>
             <iframe src="/html/pong.html" title="Pong" width="100%" height="600px" style="border: 5px solid black; border-radius: 12px; margin-top: 20px;"></iframe>
         </div>
 
-        <div class="infoblock" id="Game" style="margin-bottom: 100px;">
+        <div class="infoblock" id="InClass" style="margin-bottom: 100px;">
             <h6 style="font-size: 35px; color: black; text-align: center; margin: 0; margin-top: 10px;">inclass</h6>
             <iframe src="/html/inclass.html" title="Pong" width="100%" height="650px" style="border: 5px solid black; border-radius: 12px; margin-top: 1px;"></iframe>
         </div>

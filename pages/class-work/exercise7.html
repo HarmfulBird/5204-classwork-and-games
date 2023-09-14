@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COMP. 5204 &nbsp; Class Work</title>
+        
+        <style>
+            .app {
+                margin: auto;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                width: 400px;
+                height: 800px;
+
+                border: 3px solid black;
+                border-radius: 20px;
+
+                color: white;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: normal;
+                text-align: center;
+                
+                background-color: #202020;
+            }
+
+            button{
+                width: 80%;
+                height: 60px;
+                margin-top: 15px;
+
+                font-size: 20px;
+                color: white;
+            }
+            button:hover{
+                cursor:pointer;
+            }
+
+            #B1 {
+                margin-top: 10%;
+                border: 3px solid white;
+                border-radius: 20px;
+                color: black;
+            }
+
+            .searchTxt {
+                width: 80%;
+                height: 40px;
+                margin-top: 5%;
+                text-align: center;
+                border-radius: 20px;
+            }
+
+            .slider {
+                appearance: none;
+                margin-top: 10%;
+                width: 80%;
+                height: 10px;
+                border-radius: 5px;  
+                background: #d3d3d3;
+                outline: none;
+                opacity: 0.7;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+            }
+
+            /* Mouse-over effects */
+            .slider:hover {
+                opacity: 1; /* Fully shown on mouse-over */
+            }
+
+            #output {
+                margin: auto;
+                margin-top: 15%;
+                width: 80%;
+                height: 300px;
+                text-align: center;
+                background-color: gray;
+                border-radius: 20px;
+                text-overflow: clip;
+                overflow-wrap: break-word;
+                padding: 10px;
+                overflow: scroll;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+
+            #output::-webkit-scrollbar {
+                display: none;
+            }
+
+            #output2 {
+                margin: auto;
+                margin-top: 1%;
+                width: 70px;
+                height: 10px;
+                text-align: center;
+                background-color: gray;
+                border-radius: 20px;
+                text-overflow: normal;
+                overflow-wrap: break-word;
+                padding: 10px;
+                padding-bottom: 16px;
+                padding-right: 10px;
+                padding-top: 7px;
+                
+            }
+
+
+
+
+        </style>
+
+    </head>
+
+
+<body>
+    <div class="app" id="app">
+
+        <input type="text" placeholder="First Name" maxlength="512" id="firstName" class="searchTxt" style="margin-top: 20%;"/>
+
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <div id="output2"></div>
+
+        <button id="B1" onclick="getinput()">Submit</button>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+        
+        const output = document.querySelector("#output");
+        const firstName = document.getElementById("firstName");
+        const slider = document.getElementById("myRange");
+        const output2 = document.getElementById("output2");
+
+        output2.innerHTML = slider.value; 
+        slider.oninput = function() {
+            output2.innerHTML = this.value;
+        }
+
+        const arr1 = [];
+        
+
+        function getinput(){
+
+            arr1.push([firstName.value, slider.value]);
+            
+            console.log(arr1);
+            output.innerHTML = arr1.map(e => e.join('&nbsp | &nbsp')).join(`<br>`);
+        }
+
+
+    </script>
+</body>
+</html>

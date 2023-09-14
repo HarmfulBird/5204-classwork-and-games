@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <canvas id="myCanvas" width="600" height="400"
+    style="border:1px solid #c3c3c3;">
+    Your browser does not support the canvas element.
+    </canvas> <br>
+    
+    
+    <button onclick="startPattern()">Start</button> 
+    <button onclick="stopPattern()">Stop</button> 
+    <button onclick="clearScreen()">Clear Screen</button> 
+   
+
+
+    <script>
+        // Get Canvas
+
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        console.log(ctx);  // check variable value
+
+        //color array used for random colours
+        const myColors = ["yellow", "blue", "red", "white"];
+
+        // declare some starting variables
+        var drawInt;
+        var xPos = 50;
+        var yPos = 20;
+        var xSpeed = 5;
+        var ySpeed = 5;
+        var frameRate = 60;
+
+        // dimensions for paddle
+        const PADDLE_WIDTH = 100;
+        const PADDLE_THICKNESS = 10;
+        const PADDLE_DIST_FROM_EDGE = 60;
+        var paddleX = 400;
+
+        // gets mouse position on move event sets position of paddle
+        function updateMousePos(evt){
+            var rect = canvas.getBoundingClientRect();
+            var root = document.documentElement;
+
+            var mouseX = evt.clientX - rect.left - root.scrollLeft;    // deals with position of canvas on page?
+            // var mouseY = evt.clientY - rect.top - root.scrollTop;
+
+            paddleX = mouseX - PADDLE_WIDTH/2; // puts paddle in middle of mouse position
+        }
+
+        // adds above function to canvas on mousemove
+        canvas.addEventListener('mousemove', updateMousePos);
+
+
+
+
+        function clearScreen(){
+            ctx.reset();
+        }
+    
+
+        function startPattern(){
+            drawInt = setInterval(draw,1000/frameRate ); // global draw var drawInt declared at top
+        }
+
+        function stopPattern(){                //Clears the interval
+            clearInterval(drawInt);
+        }
+
+        function colorCircle(x, y, d){        // Draws the circle
+            ctx.beginPath();  
+            ctx.arc(x, y, d, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = "red";
+            ctx.fill();
+        }
+      
+        function colorRect( topLeftX,topLeftY, boxWidth, boxHeight, fillColor) {
+            ctx.fillStyle = fillColor;
+           ctx.fillRect( topLeftX,topLeftY, boxWidth, boxHeight);
+        }
+            
+
+        function draw(){
+            clearScreen();                               // add function to clear screen here
+            colorCircle(xPos, yPos, 20);    // draw circle
+            yPos += ySpeed;
+            xPos += xSpeed;                 
+            
+            if(yPos > canvas.height -20){     // bounce top and bottom
+                clearInterval(drawInt);
+                yPos = 20;
+            }  
+            if(yPos < 20){
+                ySpeed = -ySpeed;
+            } 
+            xPos += xSpeed;                  
+            if(xPos > canvas.width -20){    // bounces if on each of canvas
+                xSpeed = -xSpeed;
+            }  
+            if(xPos < 20){
+                xSpeed = -xSpeed;
+            }  
+
+            if((xPos > paddleX) && (xPos < paddleX + PADDLE_WIDTH) && (yPos > 320)){
+                ySpeed = -ySpeed;
+            }
+           
+            // draw paddle
+            colorRect( paddleX, canvas.height -PADDLE_DIST_FROM_EDGE, PADDLE_WIDTH, PADDLE_THICKNESS, 'black');
+
+            
+        }
+
+       // Add a function to check colision of ball with paddle. Remember to include width of ball in calculation.
+       // Don't forget to call the function. You will need to decide where to call it. When do you need to check if the ball is touchnig the paddle?
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COMP. 5204 &nbsp; Class Work</title>
+        
+        <style>
+            .app {
+                margin: auto;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                width: 400px;
+                height: 800px;
+
+                border: 3px solid black;
+                border-radius: 20px;
+
+                color: white;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-style: normal;
+                text-align: center;
+                
+                background-color: #202020;
+            }
+
+            button{
+                width: 80%;
+                height: 60px;
+                margin-top: 15px;
+
+                font-size: 20px;
+                color: white;
+            }
+            button:hover{
+                cursor:pointer;
+            }
+
+            #B1 {
+                margin-top: 10%;
+                border: 3px solid white;
+                border-radius: 20px;
+                color: black;
+            }
+
+            .searchTxt {
+                width: 80%;
+                height: 40px;
+                margin-top: 5%;
+                text-align: center;
+                border-radius: 20px;
+            }
+
+            .slider {
+                appearance: none;
+                margin-top: 10%;
+                width: 80%;
+                height: 10px;
+                border-radius: 5px;  
+                background: #d3d3d3;
+                outline: none;
+                opacity: 0.7;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+            }
+
+            /* Mouse-over effects */
+            .slider:hover {
+                opacity: 1; /* Fully shown on mouse-over */
+            }
+
+            #output {
+                margin: auto;
+                margin-top: 15%;
+                border-radius: 20px;
+                border: 2px solid white;
+            }
+
+            #output2 {
+                margin: auto;
+                margin-top: 1%;
+                width: 70px;
+                height: 10px;
+                text-align: center;
+                background-color: gray;
+                border-radius: 20px;
+                text-overflow: normal;
+                overflow-wrap: break-word;
+                padding: 10px;
+                padding-bottom: 16px;
+                padding-right: 10px;
+                padding-top: 7px;
+                
+            }
+
+
+
+
+        </style>
+
+    </head>
+
+
+<body>
+    <div class="app" id="app">
+
+        <canvas id="output" height="300px" width="300px"></canvas>
+
+        <input type="range" min="1" max="30" value="15" class="slider" id="myRange">
+        <div id="output2"></div>
+
+        <input type="checkbox" name="red" id="red"  value="red" onclick="UpdateColorArray(this)">
+        <label for="red">red</label>
+        
+        <input type="checkbox" name="green" id="green"  value="green" onclick="UpdateColorArray(this)">
+        <label for="green">Green</label>
+
+        <input type="checkbox" name="blue" id="blue"  value="blue" onclick="UpdateColorArray(this)">
+        <label for="blue">Blue</label>
+
+        <button id="B1" onclick="getinput()">Submit</button>
+
+        
+
+    </div>
+
+    <script>
+        
+        const output = document.querySelector("#output");
+        const slider = document.getElementById("myRange");
+        const blue = document.getElementById("blue");
+        const green = document.getElementById("green");
+        const red = document.getElementById("red");
+        const output2 = document.getElementById("output2");
+
+        output2.innerHTML = slider.value; 
+
+    
+
+        slider.oninput = function() {
+            output2.innerHTML = this.value;   
+        }
+
+        function UpdateColorArray(color_identifier){
+            if(!color_identifier.checked){
+                colorArray.splice(colorArray.indexOf(color_identifier.value), 1);
+            }
+            else {
+                colorArray.push(color_identifier.value)
+            }
+            console.log(colorArray)
+        }
+
+        function randomize(numberInput){
+            var randomNumber = Math.floor(Math.random()* numberInput)
+            return randomNumber;
+        }
+
+        const canvas = document.querySelector("#output");
+        const ctx = canvas.getContext("2d");
+
+        var width = canvas.width;
+        var height = canvas.height;
+        const colorArray = [];
+
+        function getinput(){
+
+            clearCanvas()
+            for(var i = 0; i < slider.value; i++)
+            {
+                ctx.beginPath();
+                ctx.arc(randomize(width), randomize(height), randomize(100), 0, 2 * Math.PI);
+                ctx.fillStyle = colorArray[randomize(colorArray.length)];
+                ctx.fill();
+                ctx.strokeStyle = "white"
+                ctx.stroke();
+                console.log(colorArray)
+            }
+        }
+
+        function clearCanvas() {
+            ctx.reset();
+        }
+
+
+    </script>
+</body>
+</html>
