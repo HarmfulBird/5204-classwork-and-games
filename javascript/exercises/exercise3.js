@@ -1,11 +1,11 @@
 const content1 = `
-    <img class="images" src="/assets/exercise3/MicrosoftTeams-image.png"></img>
+    <img class="images" src="../assets/exercise3/MicrosoftTeams-image.png"></img>
 `
 const content2 = `
-    <img class="images" src="/assets/exercise3/MicrosoftTeams-image2.png"></img> 
+    <img class="images" src="../assets/exercise3/MicrosoftTeams-image2.png"></img> 
 `
 const content3 = `
-    <img class="images" src="/assets/exercise3/MicrosoftTeams-image3.png"></img>
+    <img class="images" src="../assets/exercise3/MicrosoftTeams-image3.png"></img>
 `
 
 const screens = [content1, content2, content3];
