@@ -217,7 +217,7 @@ button.dropdown-btn {
 
 
 a.button:hover {
-    background: linear-gradient(to bottom right, rgb(250, 130, 200), rgb(243, 167, 211));
+    background: linear-gradient(to bottom right, rgb(250, 130, 200), rgb(243, 167, 211)); 
     background-repeat: no-repeat;
     background-size: cover;
 }
